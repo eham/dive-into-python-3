@@ -1,11 +1,19 @@
-import pdb
-
 SUFFIXES = {1000: ['KB', 'MB', 'GB', 'TB', 'PB', 'ZB', 'YB'],
 			1024: ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB']}
 
 
 def approximate_size(size, a_kilobyte_is_1024_bytes=True):
-    pdb.set_trace()
+    '''
+		Convert a file size to human-readable form.
+
+		Keyword arguments:
+		size -- file size in bytes
+		a_kilobyte_is_1024_bytes -- if True (default), use multiples of 1024
+								 -- if False, use multiples of 1000
+
+		Returns string
+    '''
+    
     if size < 0:
         raise ValueError('number must be non-negative')
 
@@ -14,7 +22,7 @@ def approximate_size(size, a_kilobyte_is_1024_bytes=True):
     	size /= multiple
     	if size < multiple:
     		return '{0:.1f} {1}'.format(size, suffix)
-    		
+
     raise ValueError('number too large')
 
 if __name__ == '__main__':
