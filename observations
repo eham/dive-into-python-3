@@ -1,0 +1,5 @@
+python doesn't contain separate header files
+
+there are no subroutines in python, everything is a function. all functions return a value, if it isn't declared None is returned
+
+everything in python is an object
